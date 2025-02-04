@@ -141,3 +141,4 @@ Write "shell" function => Write tests => Tests fail => Write code => Tests pass!
     - developers, QA, business partners, etc
   - defines process for different groups to interact
 - In the course, only developers so TDD!
+  s
