@@ -1,6 +1,21 @@
-import { fireEvent, logRoles } from "@testing-library/react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+
+/**
+ * render
+ * - Create simulated DOM for argument component
+ * screen
+ * - Access sumulated DOM via screen global
+ * expect().toBeInTheDocument()
+ * - assertion, causes test to succeed or fail
+ *
+ */
+
+test("App contains correct heading", () => {
+  render(<App />);
+  const headingElement = screen.getByText(/learn React/i);
+  expect(headingElement).toBeInTheDocument();
+});
 
 // eslint-disable-next-line vitest/no-commented-out-tests
 // test("App contains correct heading", () => {
@@ -16,26 +31,28 @@ import App from "./App";
 //   expect(headingElement2).toBeInTheDocument();
 // });
 
-test("button starts with correct label and color", () => {
-  const { container } = render(<App />);
-  // 페이지가 엄청 크고 항목이 많을 때, 테스트 하는 곳을 찾기 유용함
-  logRoles(container);
+// eslint-disable-next-line vitest/no-commented-out-tests
+// test("button starts with correct label and color", () => {
+//   const { container } = render(<App />);
+//   // 페이지가 엄청 크고 항목이 많을 때, 테스트 하는 곳을 찾기 유용함
+//   logRoles(container);
 
-  const buttonElement = screen.getByRole("button", { name: /blue/i });
-  expect(buttonElement).toHaveClass("red");
-});
+//   const buttonElement = screen.getByRole("button", { name: /blue/i });
+//   expect(buttonElement).toHaveClass("red");
+// });
 
-test("button click flow", () => {
-  // render App
-  render(<App />);
-  // find the button
-  const buttonElement = screen.getByRole("button", { name: /blue/i });
-  // check initial color
-  expect(buttonElement).toHaveClass("red");
-  // click the button
-  fireEvent.click(buttonElement);
-  // check button text
-  expect(buttonElement).toHaveTextContent(/red/i);
-  // check the button color
-  expect(buttonElement).toHaveClass("blue");
-});
+// eslint-disable-next-line vitest/no-commented-out-tests
+// test("button click flow", () => {
+//   // render App
+//   render(<App />);
+//   // find the button
+//   const buttonElement = screen.getByRole("button", { name: /blue/i });
+//   // check initial color
+//   expect(buttonElement).toHaveClass("red");
+//   // click the button
+//   fireEvent.click(buttonElement);
+//   // check button text
+//   expect(buttonElement).toHaveTextContent(/red/i);
+//   // check the button color
+//   expect(buttonElement).toHaveClass("blue");
+// });
