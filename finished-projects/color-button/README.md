@@ -11,7 +11,7 @@ npm install -D vitest @vitest/ui eslint-plugin-vitest
 npm install -D jsdom @testing-library/jest-dom @testing-library/react eslint-plugin-jest-dom eslint-plugin-testing-library
 ```
 
-## Add test script to package.json `test` object
+## Add test script to package.json `test` object s
 
 ```json
   "test": "vitest",
