@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import SummaryForm from "../summary/SummaryForm";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 
 test("Initial conditions", () => {
   render(<SummaryForm />);

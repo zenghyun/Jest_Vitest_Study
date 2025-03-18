@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import ScoopOption from "./ScoopOption";
 
-// eslint-disable-next-line react/prop-types
 export default function Options({ optionType }) {
   const [items, setItems] = useState([]);
 
@@ -14,7 +13,6 @@ export default function Options({ optionType }) {
       .then((response) => setItems(response.data))
       .catch((error) => {
         // TODO: handle error response
-        console.log(error);
       });
   }, [optionType]);
 
