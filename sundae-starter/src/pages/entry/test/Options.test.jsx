@@ -30,3 +30,12 @@ test("Displays image for each toppings option from server", async () => {
     "Hot fudge topping",
   ]);
 });
+
+/**
+ * Jest / Vitest Debugging Tools
+ * - Jest / Vitest debugging tools in this section
+ *  - running only one test file
+ *  - running only one test within a file
+ * - To give us something to debug:
+ *  - Going to write code I know won't pass
+ */
