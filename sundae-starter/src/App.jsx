@@ -1,4 +1,7 @@
-import SummaryForm from "./pages/summary/SummaryForm";
+// import SummaryForm from "./pages/summary/SummaryForm";
+import Container from "react-bootstrap/Container";
+import { OrderDetailsProvider } from "./contexts/OrderDetails";
+import OrderEntry from "./pages/entry/OrderEntry";
 
 /**
  *
@@ -15,11 +18,20 @@ import SummaryForm from "./pages/summary/SummaryForm";
  * - global state via context
  */
 function App() {
+  // return; /// <div>
+  {
+    /* <h1>Sundaes on Demand</h1> */
+  }
+  {
+    /* <SummaryForm /> */
+  }
+  // </div>
   return (
-    <div>
-      <h1>Sundaes on Demand</h1>
-      <SummaryForm />
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        <OrderEntry />
+      </OrderDetailsProvider>
+    </Container>
   );
 }
 
