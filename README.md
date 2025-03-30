@@ -25,6 +25,7 @@
 
 ```
 expect(linkElement).toBeInTheDocument();
+expect(linkElement) => vitest에서는 이것이 존재한다고 기대한다는 뜻
 ```
 
 - expect
@@ -141,4 +142,76 @@ Write "shell" function => Write tests => Tests fail => Write code => Tests pass!
     - developers, QA, business partners, etc
   - defines process for different groups to interact
 - In the course, only developers so TDD!
-  s
+
+#### Accessibility and Finding Elements
+
+- Testing Library recommends finding elements by accessibility handles
+  - https://testing-library.com/docs/guide-which-query/
+- Can't find an element like a screen reader would?
+  - Then your app isn't friendly to screen readers
+
+### Discussion: When to Unit Test?
+
+- When to unit test?
+  - kebabCaseToTitleCase is pretty simple
+  - colud be covered by functional tests on button
+- For more complicated functions, unit tests help with:
+  - covering all possible edge cases
+  - determining wht caused functional tests to fail
+- Issue with functional tests:
+  - high-level makes them resistant to refactors
+  - high-level makes them difficult to diagnose
+
+### Vitest ESLint Plugin
+
+- Vitest ESLint plugin
+  - enforces best practices
+  - makes sure test 'experiments' don't make it into CI
+  - prevents ESLint from flagging Vitest globals like test and describe
+  - https://github.com/veritem/eslint-plugin-vitest
+
+### Differences from fireEvent and User-Event
+
+- 'fireEvent' dispatches DOM events, whereas 'user-event' simulates full interactions, which may fire multiple events and do additional checks along the way.
+- fireEvent는 단순히 DOM events를 발생시키는데 userEvent는 전반적인 상황의 흐름을 분석함
+- 중요! user-event APIs always return a Promise (비동기)
+- https://testing-library.com/docs/user-event
+
+### screen Query Methods
+
+#### command[All]ByQueryType
+
+- command
+  - get: expect element to be in DOM
+  - query: expect element not to be in DOM
+  - find: expect element to appear async
+- [All]
+
+  - (exclude) expect only one match
+  - (include) expect more than one match
+
+- QueryType
+  - Role (most preferred)
+  - AltText (images)
+  - Text (display elements)
+  - Form elements
+    - PlaceholderText
+    - LabelText
+    - DisplayValue
+
+### screen Query Reference
+
+- https://testing-library.com/docs/dom-testing-library/api-queries
+- https://testing-library.com/docs/react-testing-library/cheatsheet/
+- https://testing-library.com/docs/guide-which-query
+
+### How to find element
+
+- From mockups, grand total should be same size as titles (<h2>)
+  - we can search using the heading role
+    - include the text in the name option
+- Note: { exact : false } is not an option for \*byRole
+  - Either use \*byRole and regular expression for name option, or
+    - screen.getByRole('heading', {name: /grand total: \$/i});
+  - \*byText and { exact: false }
+    - screen.getByText('Grand total: $', { exact : false });

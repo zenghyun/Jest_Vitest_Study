@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../src/test-utils/testing-library-utils";
 import SummaryForm from "../summary/SummaryForm";
 import { userEvent } from "@testing-library/user-event";
 

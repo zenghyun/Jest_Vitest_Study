@@ -91,6 +91,7 @@ test("checkbox flow", () => {
   expect(buttonElement).toHaveClass("medium-violet-red");
 });
 
+// describe => test 할 코드를 한번에 묶어서 test 할 수 있음
 describe("kebabCaseToTitleCase", () => {
   test("works for no hyphens", () => {
     expect(kebabCaseToTitleCase("red")).toBe("Red");

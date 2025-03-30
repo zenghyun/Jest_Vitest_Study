@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Form, Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { useOrderDetails } from "../../contexts/OrderDetails";
+import { formatCurrency } from "../../utilities";
+
 export default function SummaryForm() {
   const [tcChecked, setTcChecked] = useState(false);
+  const { totals } = useOrderDetails();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +35,7 @@ export default function SummaryForm() {
           label={checkboxLabel}
         />
       </Form.Group>
-      <Button varient="primary" type="submit" disabled={!tcChecked}>
+      <Button variant="primary" type="submit" disabled={!tcChecked}>
         Confirm order
       </Button>
     </Form>

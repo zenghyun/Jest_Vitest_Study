@@ -29,7 +29,9 @@ export default function ScoopOptions({ name, imagePath }) {
           style={{
             textAlign: "right",
           }}
-        ></Form.Label>
+        >
+          {name}
+        </Form.Label>
         <Col xs="5" style={{ textAlign: "left" }}>
           <Form.Control
             type="number"

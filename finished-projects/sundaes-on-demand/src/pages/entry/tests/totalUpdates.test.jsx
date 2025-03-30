@@ -3,6 +3,18 @@ import userEvent from "@testing-library/user-event";
 import Options from "../Options";
 import OrderEntry from "../OrderEntry";
 
+/**
+ * Review of Tests
+ * - getByText to find total
+ *  - exact option set to false
+ * - number inputs
+ *   - await and findBy (coming from server async)
+ *   - spinbutton role
+ *   - userEvent.clear to clear existing text
+ *   - userEvent.type to enter number
+ * - wrapper option to render to apply context provider
+ * - Readfind Testing Library render to access universally
+ */
 test("update scoop subtotal when scoops change", async () => {
   const user = userEvent.setup();
   render(<Options optionType="scoops" />);
