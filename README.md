@@ -7,7 +7,7 @@
     - not internal implementation
   - Find elements by accessibility markers, not test IDs
 
-### React Testing Library vs Jest (of Vitest)
+### React Testing Library vs Jest ( of Vitest )
 
 - React Testing Library
   - Provides simulated DOM for tests
@@ -40,10 +40,10 @@ expect(linkElement) => vitest에서는 이것이 존재한다고 기대한다는
 
 #### More assertion examples
 
-    ```
-    expect(element.textContent).toBe('hello');
-    expect(elementsArray).toHaveLength(7);
-    ```
+```
+expect(element.textContent).toBe('hello');
+expect(elementsArray).toHaveLength(7);
+```
 
 #### Jest-DOM
 
@@ -96,6 +96,7 @@ Write "shell" function => Write tests => Tests fail => Write code => Tests pass!
 
 - Makes a huge difference in how it feels to write tests
   - part of the coding process, not a 'chore' to do at the end
+  - 마지막에 해야하는 따분한 일이 아니라 코딩 프로세스의 일부이다.
 - More efficient
   - Re-run tests 'for free' after changes
 
